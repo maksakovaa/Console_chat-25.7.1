@@ -149,7 +149,7 @@ void SQL_DB::delUser(int id)
 {
 	m_query = "UPDATE " + mysql_table_users + " ";
 	m_query += "SET deleted = 1 ";
-	m_query += "WHERE BIN_TO_UUID(id) = '" + UserBase->getUser(id).uuid + "'";
+	m_query += "WHERE BIN_TO_UUID(uuid) = '" + UserBase->getUser(id).uuid + "'";
 	sendRequest("DELETE FOR USER");
 }
 
